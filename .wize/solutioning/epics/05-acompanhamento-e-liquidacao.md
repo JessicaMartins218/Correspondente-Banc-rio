@@ -1,26 +1,25 @@
 ---
 epic_id: 05-acompanhamento-e-liquidacao
 status: ready
-owner: Tony Stark + Maria Hill
+owner: Maria Hill + Tony Stark
 linked_prd: E05
-trigger_map_row: 5
 priority: 5
 ---
 
-# Epic 05: Averbação, Desembolso Financeiro e Notificação em Tempo Real
+# Epic 05: Acompanhamento de Esteira, Confirmação de Liquidação e Pós-Venda
 
 ## Outcome
-A proposta assinada é transmitida para a esteira bancária e averbada junto ao órgão responsável (Dataprev/INSS/Caixa). Assim que o pagamento (PIX/TED) é efetuado, o cliente recebe notificação comemorativa imediata no WhatsApp com o comprovante de pagamento e cópia da CCB, encerrando a jornada com pesquisa de satisfação.
+O robô consulta periodicamente o status da proposta no portal do banco, avisa o cliente no WhatsApp a cada atualização (em análise, averbado e pago/PIX creditado), coleta avaliação NPS de satisfação, aciona a régua de relacionamento de pós-venda (30, 60, 90 dias) e fornece o dashboard diário de contratos pagos para a JM Consultoria acompanhar a meta de 15 contratos/dia.
 
 ## Stories
-- **E05-S01:** Transmissão da Proposta para a Esteira Bancária e Notificação de Averbação em Andamento (AC-05-1)
-- **E05-S02:** Tratamento de Recusa/Pendência de Averbação com Alerta ao Operador e ao Cliente (AC-05-2)
-- **E05-S03:** Webhook de Confirmação de Liquidação Financeira e Emissão de Comprovante (AC-05-3, AC-05-4)
-- **E05-S04:** Pesquisa de Satisfação NPS Conversacional no WhatsApp e Encerramento da Jornada (AC-05-5)
+- **E05-S01:** Monitoramento Automatizado de Status da Proposta no Portal do Banco (AC-05-1)
+- **E05-S02:** Notificação em Tempo Real de Averbação e Confirmação de Pagamento/PIX (AC-05-2)
+- **E05-S03:** Módulo de Pós-Venda, Pesquisa NPS e Régua de Relacionamento Futuro (AC-05-3, AC-05-4)
+- **E05-S04:** Dashboard Operacional e Relatório Diário de Conversão (Meta de 15 Contratos/Dia) (AC-05-5)
 
 ## Dependencies
-- Epic 04 concluído (contrato assinado e biometria aprovada).
-- Webhooks configurados para recepção de eventos de averbação e pagamento das instituições financeiras parceiras.
+- Epic 04 concluído (contrato formalizado pelo cliente).
+- Rotina de cron/job agendada para pooling do portal do banco e consolidação de relatórios às 19h/20h.
 
 ## Success
-Tempo entre confirmação do pagamento e envio do WhatsApp com comprovante ≤ 30 segundos; índice de resposta ao NPS ≥ 40% com meta de NPS ≥ 75.
+Notificação de pagamento enviada em até 2 minutos após identificação no portal; taxa de resposta ao NPS ≥ 40%; visibilidade diária exata do atingimento da meta de 15 contratos/dia (10 FGTS/CLT e 5 INSS).

@@ -1,25 +1,25 @@
 ---
 epic_id: 02-motor-de-simulacao
 status: ready
-owner: Tony Stark + Maria Hill
+owner: Maria Hill + Tony Stark
 linked_prd: E02
-trigger_map_row: 2
 priority: 2
 ---
 
-# Epic 02: Motor de Simulação Multibancos e Apresentação de Propostas
+# Epic 02: Motor de Automação Web (RPA) para Login e Simulação nos Portais Bancários
 
 ## Outcome
-O cliente escolhe o produto de crédito desejado (INSS, FGTS, etc.) e recebe instantaneamente uma lista clara, transparente e comparativa das melhores propostas dos bancos parceiros, podendo ajustar parcelas e prazos ou selecionar a proposta ideal no chat.
+O robô conecta-se de forma segura aos portais dos bancos parceiros (DSV e Prata) com as credenciais cadastradas, mantém a sessão ativa com reconexão resiliente, executa simulações precisas de crédito com base nas informações do cliente e formata uma resposta comparativa, clara e transparente no WhatsApp.
 
 ## Stories
-- **E02-S01:** Integração com APIs de Simulação dos Bancos e Cálculo de CET e Parcelas (AC-02-1)
-- **E02-S02:** Formatação Visual e Comparativo Interativo de Propostas no WhatsApp (AC-02-2)
-- **E02-S03:** Customização de Prazos/Valores e Reserva de Tabela com Congelamento de Proposta (AC-02-3, AC-02-4)
+- **E02-S01:** Cofre Seguro de Credenciais e Autenticação Automatizada (RPA) nos Portais Bancários (AC-02-1, AC-02-2)
+- **E02-S02:** Motor de Simulação Headless nos Portais dos Bancos DSV e Prata (AC-02-3)
+- **E02-S03:** Formatação Comparativa de Propostas no WhatsApp e Seleção de Condições pelo Cliente (AC-02-4, AC-02-5)
 
 ## Dependencies
-- Epic 01 concluído (sessão ativa e CPF triado).
-- Credenciais e rotas de integração das APIs/tabelas de promotoras e bancos conveniados.
+- Epic 01 concluído (sessão ativa, consentimento LGPD e CPF validado).
+- Credenciais dos portais dos bancos (DSV e Prata) salvas de forma segura no ambiente.
+- Ambiente com Playwright/Puppeteer configurado para execução de navegadores headless.
 
 ## Success
-Simulação completa retornada em tempo real (tempo de resposta agregado ≤ 3s); taxa de abandono na tela de propostas ≤ 15%.
+Simulação extraída do portal bancário em tempo hábil (≤ 15 segundos); autenticação e reconexão automática sem quebra de sessão em 99% das tentativas; apresentação legível em smartphones com destaque de valor líquido liberado.
